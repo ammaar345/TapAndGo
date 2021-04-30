@@ -9,11 +9,11 @@ public class TapAndGo {
    }
 
 
-    public void pay(){
+    public void pay(double payAmount){
 
 
     }
-    public void deposit(){
+    public void deposit(double depositAmount){
 
 
     }
