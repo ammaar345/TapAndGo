@@ -18,7 +18,7 @@ public class TapAndGo {
                 balance = balance - payAmount; //subtracting payment from your balance
 
             } else {
-                throw new Exception("bread");
+                throw new Exception();
             }
         } catch (Exception e) {
             System.out.println("You are exceeding the tap and go limit for your card.");
