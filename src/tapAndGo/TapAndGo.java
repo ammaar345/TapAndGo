@@ -14,26 +14,25 @@ public class TapAndGo {
 
     public void pay(double payAmount) {
         try {
-            if (payAmount < threshold) {
+            if (payAmount > threshold) {
+                balance = balance;
+                throw new Exception();
+
+            } else if (payAmount < threshold && balance > payAmount) {
                 balance = balance - payAmount; //subtracting payment from your balance
 
             }
-            else if (payAmount>getBalance()){
-                throw new Exception();
-            }
-
-            else {
-                throw new Exception();
-            }
-
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             System.out.println("You are exceeding the tap and go limit for your card.");
         }
-//        catch (Exception e) {
-//            System.out.println("You are exceeding the tap and go limit for your card.");
-//        }
 
+        try {
+            if (payAmount > getBalance()) {
+                throw new Exception();
+            }
+        } catch (Exception b) {
+            System.out.println("Insufficient funds.");
+        }
     }
 
     public void deposit(double depositAmount) {
